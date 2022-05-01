@@ -12,15 +12,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(authenticationScheme =>
 {
-    authenticationScheme.RequireHttpsMetadata = false;// https gerekli deðil
+    authenticationScheme.RequireHttpsMetadata = false;// https gerekli deÃ°il
     authenticationScheme.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
     {
         ValidIssuer ="http://localhost",
         ValidAudience ="http://localhost",
-        IssuerSigningKey =new SymmetricSecurityKey(Encoding.UTF8.GetBytes("alperalbostansa!5054774994")),//jwt sitesindeki þifre
+        IssuerSigningKey =new SymmetricSecurityKey(Encoding.UTF8.GetBytes("karisiksifregirin")),//jwt sitesindeki Ã¾ifre
         ValidateIssuerSigningKey =true, 
         ValidateLifetime =true,
-        ClockSkew =TimeSpan.Zero //saat farký oluþmamasý için
+        ClockSkew =TimeSpan.Zero //saat farkÃ½ oluÃ¾mamasÃ½ iÃ§in
 
     };
 });
@@ -33,7 +33,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseAuthentication();//üst kýsýmda olacak
+app.UseAuthentication();//Ã¼st kÃ½sÃ½mda olacak
 app.UseAuthorization();
 
 app.MapControllers();
