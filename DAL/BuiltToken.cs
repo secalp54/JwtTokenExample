@@ -9,7 +9,7 @@ namespace TokenExemble.DAL
         public string createToken()
         {
             //startup tarafından tanımlanan anahtar değerimiz çağrılır
-            var bytes = Encoding.UTF8.GetBytes("alperalbostansa!5054774994");
+            var bytes = Encoding.UTF8.GetBytes("karisiksifregirin");
             SymmetricSecurityKey key= new SymmetricSecurityKey(bytes);
             SigningCredentials credentials = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
             JwtSecurityToken token = new JwtSecurityToken(issuer:"http://localhost",audience:"http://localhost",notBefore:DateTime.Now,expires:DateTime.Now.AddMinutes(20),signingCredentials:credentials);
